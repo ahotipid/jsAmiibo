@@ -1,0 +1,223 @@
+html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
+
+.clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
+
+html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+
+*, *:before, *:after {box-sizing: inherit}
+
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+/* font-family: 'Press Start 2P', cursive; */
+/* font-family: 'VT323', monospace; */
+.wrapper {
+    max-width: 1200px;
+    width: 85%;
+    margin: 0 auto;
+}
+body {
+    background-color: #6185f8;
+    font: 25px monospace;
+}
+/* header styles */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+img.logo {
+    width: 50vw;
+    max-width: 500px;
+    margin: 60px;
+}
+h1 {
+    font: 25px 'Press Start 2P', cursive;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    
+}
+.searchBar{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    margin : 0;
+}
+label {
+    align-self: center;
+}
+label,
+select,
+option,
+input {
+    font: 20px 'Press Start 2P', monospace;
+    padding: 5px 5px;
+    margin: 5px 2px;
+}
+input#character,
+input[type=submit] {
+    border: 4px solid #954b0c;
+    padding: 5px 5px;
+    background-color: #eeaf36;
+    margin: 5px 5px;
+    outline: 0px;
+}
+input#character {
+    width : 300px;
+    min-width : 240px;
+    flex-shrink: 1;
+}
+input[type=submit]:hover,
+input#character:hover,
+select:hover{
+    box-shadow: 0px 0px 10px #684632;
+}
+/* down arrow from https://iconmonstr.com */
+select {
+    font: 20px 'Press Start 2P', cursive;
+    padding: 5px 25px 5px 5px;
+    background-color: #eeaf36;
+    border: 4px solid #954b0c;
+    appearance: none;
+    outline: 0px;
+    background-image: url(./asset/iconmonstr-arrow-80.svg);
+    background-repeat: no-repeat;
+    background-position: 95% ;
+}
+/* main style */
+main.wrapper {
+    margin-top: 60px;
+}
+.searchResult {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.amiiboImage {
+    max-height: 80%;
+}
+h3 {
+    font: 20px 'Press Start 2P', cursive;
+    color: #eeaf36;
+    text-align: center;
+}
+.flipcard{
+    background-color: transparent;
+    width: 300px;
+    height: 475px;
+    perspective: 1000px;
+    margin: 30px 20px;
+    flex-shrink: 0;
+
+}
+.flipcardAction{
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    
+}
+.flipcard:hover .flipcardAction{
+    box-shadow: 0px 0px 50px #73f218;
+    transform: rotateY(-180deg);
+}
+.imageCardFront,
+.imageCardBack {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 30px;
+    border-radius: 20px;
+}
+.imageCardFront{
+    background-color: #043717;
+    color: #eeaf36;
+    border-radius: 20px;
+    border: 15px solid #b72504;
+}
+.imageCardBack {
+    background-color: #043717;
+    color: #eeaf36;
+    transform: rotateY(-180deg);
+    border-radius: 20px;
+}
+.flipcard p {
+    color: #eeaf36;
+    text-align: center;
+    font-weight: 500;
+}
+/* modal style */
+#modalForCharacter,
+#modalForError {
+    /* modal hidden by default */
+    visibility: hidden; 
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0,0,0,0.6);
+}
+.modalContent {
+    background-color: #eeaf36;
+    margin: 20% auto;
+    padding: 20px;
+    width: 50%;
+    border: 10px solid #b72504;
+}
+.xButton {
+    color: #b72504;
+    font: 30px 'Press Start 2P', cursive;
+    text-align: right;
+    float: right;
+}
+.xButton:hover,
+.xButton:active {
+    background-color: #6185f8;
+}
+.modalText {
+    color: #138200;
+    font: 20px 'Press Start 2P', cursive;
+    text-align: center;
+    padding: 20px;
+}
+#modalForCharacter.activate,
+#modalForError.activate {
+    /* modal becomes visible */
+    visibility: visible; 
+}
+/* footer styles */
+footer {
+    background-color: #138200;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-content: center;
+    margin-top: 80px;
+}
+footer p {
+    text-align: center;
+    font: 14px 'Press Start 2P', cursive;
+    margin: 7px 0;
+    color: #043717;
+}
+footer p.abbreviation {
+    color: #138200;
+    background-color:#043717;
+    padding: 3px 0;
+}
+footer a {
+    text-decoration: none;
+    color: #73f218;
+}
+
+/* code end */

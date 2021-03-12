@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="./style.css" />
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+    <title>Amiibo Search</title>
+</head>
+<body>
+    <header class="wrapper">
+        <img class='logo' src="./asset/Amiibo.svg.png" alt="coloured amiibo logo">
+        <!-- amiibo logo form wikipedia -->
+        <h1>search amiibo by character and type</h1>
+        <form class="searchBar wrapper">
+            <label for="character">Character</label>
+            <input type="text" id="character"placeholder="Bowser Jr." autocomplete="off">
+            <select name="type" id="typeSelect" autocomplete="off">
+                <option value="figure">figure</option>
+                <option value="card">card</option>
+            <input type="submit" value="search">
+        </form>
+        <!-- modal box to alert that the text input is empty -->
+        <div id="modalForCharacter">
+            <div class="modalContent">
+                <span class="xButton">x</span>
+                <p class="modalText">Please input character</p>
+            </div>
+        </div>
+        <!-- modal box to alert that the result not found -->
+        <div id="modalForError">
+            <div class="modalContent">
+                <span class="xButton">x</span>
+                <p class="modalText">Amiibo not found</p>
+            </div>
+        </div> 
+    </header>
+    <main class="searchResult wrapper">
+        <!-- dynamic content appends here -->
+          
+    </main>
+    <footer> 
+        <p class="abbreviation">au = Australia | eu = Europe | jp = Japan | na = North America</p>
+        <p>Data courtesy of <a href="https://amiiboapi.com/" target="_blank">AmiiboAPI</a></p>
+        <p>Created at <a href="https://junocollege.com/" target="_blank">Juno College</a></p>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
