@@ -11,11 +11,12 @@ app.amiibo = (character, type) => {
     dataQuery.character = character;
   }
   const amiiboSearch = $.ajax({
-    url: 'https://proxy.hackeryou.com',
-    method: 'GET',
+    // url: 'https://proxy.hackeryou.com',
+    url: `https://www.amiiboapi.com/api/amiibo`,
+    type: 'GET',
     dataType: 'json',
     data: {
-      reqUrl: `https://www.amiiboapi.com/api/amiibo`,
+      // reqUrl: `https://www.amiiboapi.com/api/amiibo`,
       params: dataQuery
     }
   });
